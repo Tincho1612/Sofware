@@ -19,3 +19,51 @@ printf("Hello world");
 
                                                        //Cargar reserva
 
+void cargarReservaArchivo (char archivo[30])
+{
+    FILE *buffer = fopen(archivo,"ab");
+    if (buffer != NULL)
+    {
+        float validacion=0;
+        streserva reserva;
+        printf("Coloque la id de la reserva (esta tiene que ser igual a la del cliente)\n");
+        scanf("%d",&reserva.id);
+        printf("coloque el nombre del cliente \n");
+        fflush(stdin);
+        scanf("%s",&reserva.nombreDelCliente);
+        printf("Coloque el horario de la reserva \n");
+        scanf("%f",&validacion);
+
+        while ((validacion > 24) || (validacion < 11))
+        {
+            printf("Horario incorrecto, ingrese un horario entre las 11 y 24 horas\n");
+            scanf("%f",&validacion);
+        }
+        reserva.horario=validacion;
+        fwrite(&reserva,sizeof(streserva),1,buffer);
+        fclose(buffer);
+    }
+    else
+    {
+        printf("Hubo un error\n")
+    }
+}
+
+                                                    //Mostrar listado de reserva
+void mostrarArchivoReserva (char archivo[30])
+{
+    FILE *buffer = fopen(archivo,"rb");
+    streserva reserva;
+    if (buffer != NULL)
+    {
+        while (fread(&reserva,sizeof(streserva),1,buffer) > 0)
+        {
+            mostrarReserva(reserva);
+        }
+        fclose(buffer);
+    }
+    else
+    {
+        printf("Hubo un error\n")
+    }
+}
