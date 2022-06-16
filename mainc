@@ -1,23 +1,5 @@
-printf("Hello world");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Funciones
-                                                            //cargar cliente
-
-
-                                                       //Cargar reserva
+#include <stdio.h>
+#include <stdlib.h>
 
 void cargarReservaArchivo (char archivo[30])
 {
