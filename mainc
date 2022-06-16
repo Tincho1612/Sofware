@@ -15,40 +15,7 @@ printf("Hello world");
 
 // Funciones
                                                             //cargar cliente
-stcliente cargarCliente(stcliente cliente){
 
-
-    printf("Coloque un id para el cliente :   ");
-    scanf("%i", &cliente.id);
-
-    printf("Coloque el nombre del cliente :   ");
-    fflush(stdin);
-    gets(cliente.nombre);
-
-    printf("Tiene reserva? (s/n) :   ");
-    fflush(stdin);
-    scanf("%c", &cliente.reserva);
-
-
-    return cliente;
-
-}
 
                                                        //Cargar reserva
-streserva cargarReserva (streserva reserva){
-    float validacion=0;
-    printf("Coloque la id de la reserva (esta tiene que ser igual a la del cliente)\n");
-    scanf("%d",&reserva.id);
-    printf("coloque el nombre del cliente \n");
-    fflush(stdin);
-    scanf("%s",&reserva.nombreDelCliente);
-    printf("Coloque el horario de la reserva \n");
-    scanf("%f",&validacion);
-    while ((validacion > 24) || (validacion < 11))
-    {
-        printf("Horario incorrecto, ingrese un horario entre las 11 y 24 horas\n");
-        scanf("%f",&validacion);
-    }
-    reserva.horario=validacion;
-    return reserva;
-}
+
