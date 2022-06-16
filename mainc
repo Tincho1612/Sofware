@@ -1,2 +1,34 @@
 printf("Hello world");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Funciones
+stcliente cargarCliente(stcliente cliente){
+
+
+    printf("Coloque un id para el cliente :   ");
+    scanf("%i", &cliente.id);
+
+    printf("Coloque el nombre del cliente :   ");
+    fflush(stdin);
+    gets(cliente.nombre);
+
+    printf("Tiene reserva? (s/n) :   ");
+    fflush(stdin);
+    scanf("%c", &cliente.reserva);
+
+
+    return cliente;
+
+}
